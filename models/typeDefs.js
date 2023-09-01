@@ -32,18 +32,29 @@ type Project {
 }
 
   type Query {
-    projects: String
-    # name: String
-    # description: String,
-    # description2: String,
-    # description3: String,
-    # github_link: String,
-    # deployed_link: String,
-    # pictures: String,
-    # tech_lang(name: String, description: String): [TechLang],
-    # clients(name: String, description: String): [Client],
-    # teammates(name: String, description: String): [Teammate]
+    projects: [Project]
+    project(name: String): Project
   }
+
+#   type Mutation {
+#     create(    
+#         name: String
+#         description: String,
+#         description2: String,
+#         description3: String,
+#         github_link: String,
+#         deployed_link: String,
+#         pictures: String,
+#         tech_lang: [
+#             name: String,
+#             description: String],
+#         clients: [
+#             name: String,
+#             description: String],
+#         teammates: [
+#             name: String,
+#             description: String]): Project
+#   }
 `;
 
 module.exports = { typeDefs };

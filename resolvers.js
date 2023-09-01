@@ -1,6 +1,9 @@
+const { Projects } = require("./models/Project");
+
 const resolvers = {
     Query: {
-        projects: () => 'Working ...? kind of, you simple fucker lol',
+        projects: async () => await Projects.find({}),
+        project: async (_, args) => await Projects.find(args.name),
         // description: () => 'description',
         // description2: () => 'description2',
         // description3: () => 'description3',
